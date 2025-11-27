@@ -1,6 +1,6 @@
 # afi-eliza-gateway — Agent Instructions
 
-**afi-eliza-gateway** is the AFI ↔ Eliza integration gateway. It hosts Phoenix/Eliza character configs, AFI-specific Eliza plugins, and client code that calls AFI services over HTTP/WS APIs. This repo is an **external client** of AFI services, not part of the AFI core codebase.
+**afi-eliza-gateway** is the AFI ↔ Eliza integration gateway. It hosts Phoenix/Eliza character configs, AFI-specific Eliza plugins, and client code that calls AFI services over HTTP/WS APIs. This repo is an **external client** of AFI services, not part of the AFI core codebase. Runtime behavior for AFI-aware Eliza agents is governed by `docs/AFI_AGENT_PLAYBOOK.v0.1.md`; this AGENTS.md describes the gateway's role and integration boundaries.
 
 **Global Authority**: All agents operating in AFI Protocol repos must follow `afi-config/codex/governance/droids/AFI_DROID_CHARTER.v0.1.md`. If this AGENTS.md conflicts with the Charter, **the Charter wins**.
 
