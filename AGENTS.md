@@ -4,6 +4,11 @@
 
 **Global Authority**: All agents operating in AFI Protocol repos must follow `afi-config/codex/governance/droids/AFI_DROID_CHARTER.v0.1.md`. If this AGENTS.md conflicts with the Charter, **the Charter wins**.
 
+For global droid behavior and terminology, see:
+- `afi-config/codex/governance/droids/AFI_DROID_CHARTER.v0.1.md`
+- `afi-config/codex/governance/droids/AFI_DROID_PLAYBOOK.v0.1.md`
+- `afi-config/codex/governance/droids/AFI_DROID_GLOSSARY.md`
+
 **⚠️ CRITICAL**: This gateway MUST call AFI services (afi-reactor, afi-core) over HTTP/WS. It MUST NOT reimplement AFI business logic.
 
 ---
@@ -125,13 +130,9 @@ npm run build
 - Add orchestration logic (that belongs in afi-reactor)
 - Modify AFI core business logic from this repo
 
-**Ambiguous**:
-- When in doubt, prefer calling an AFI service or asking for human review rather than duplicating logic.
-- If you need new AFI functionality, propose it in afi-reactor or afi-core, not here.
+**Ambiguous**: When in doubt, prefer calling an AFI service or asking for human review rather than duplicating logic. If you need new AFI functionality, propose it in afi-reactor or afi-core, not here.
 
 ---
 
-**Last Updated**: 2025-11-26  
-**Maintainers**: AFI Gateway Team  
-**Charter**: `../afi-config/codex/governance/droids/AFI_DROID_CHARTER.v0.1.md`
+**Last Updated**: 2025-11-26 | **Maintainers**: AFI Gateway Team | **Charter**: `../afi-config/codex/governance/droids/AFI_DROID_CHARTER.v0.1.md`
 
