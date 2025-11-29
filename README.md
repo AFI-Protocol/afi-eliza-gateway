@@ -60,15 +60,47 @@ This repository is the integration gateway between AFI Protocol and ElizaOS (Pho
 
 ## Quick Start
 
+### Prerequisites
+
+- Node.js 20+ (for ElizaOS compatibility)
+- npm or yarn
+- OpenAI API key (for LLM functionality)
+
+### Installation
+
 ```bash
 # Install dependencies
 npm install
+```
 
-# Run in dev mode
+### Configuration
+
+Create a `.env` file in the root directory:
+
+```bash
+# Required: OpenAI API key for LLM
+OPENAI_API_KEY=sk-...
+
+# Optional: Discord bot credentials (for Discord client)
+# DISCORD_APPLICATION_ID=your_discord_app_id
+# DISCORD_API_TOKEN=your_discord_bot_token
+
+# Optional: AFI service URLs (for future AFI telemetry plugin)
+# AFI_REACTOR_URL=http://localhost:3001
+# AFI_CORE_URL=http://localhost:3002
+```
+
+### Running
+
+```bash
+# Run in dev mode (with hot reload)
 npm run dev
 
 # Build TypeScript
 npm run build
+
+# Run production build
+npm start
 
 # Type check
 npm run typecheck
@@ -79,20 +111,67 @@ npm test
 
 ---
 
+## Safety Disclaimers
+
+**IMPORTANT**: Phoenix is an educational and informational agent. It does NOT:
+
+- Provide financial advice or trade recommendations
+- Guarantee returns, yields, or APY
+- Execute transactions or sign contracts
+- Access user funds or wallets
+- Make promises about token prices or market outcomes
+
+**What Phoenix DOES**:
+
+- Explain how AFI Protocol works (signal lifecycle, validators, governance)
+- Help users understand AFI's intelligence outputs
+- Point users to documentation and resources
+- Act as a concierge into AFI tools (not the tool itself)
+
+**User Responsibility**: Users are solely responsible for their own financial decisions. AFI Protocol provides intelligence, not advice.
+
+---
+
 ## Directory Structure
 
 ```
 afi-eliza-gateway/
 ├── src/
-│   ├── index.ts              # Gateway entrypoint
-│   ├── plugins/              # AFI-specific Eliza plugins
-│   ├── characters/           # Eliza character configs
-│   └── clients/              # HTTP/WS clients for AFI services
+│   ├── index.ts                  # Gateway entrypoint (ElizaOS runtime)
+│   ├── phoenix.character.ts      # Phoenix character definition
+│   ├── plugins/                  # AFI-specific Eliza plugins (future)
+│   ├── characters/               # Additional character configs (future)
+│   └── clients/                  # HTTP/WS clients for AFI services (future)
+├── dist/                         # Compiled TypeScript output
 ├── package.json
 ├── tsconfig.json
+├── .env                          # Environment variables (not committed)
 ├── README.md
-└── AGENTS.md                 # Droid instructions
+└── AGENTS.md                     # Droid instructions
 ```
+
+---
+
+## Phoenix Character
+
+Phoenix is AFI Protocol's frontline agent and primary human-facing voice.
+
+**Governance Documentation**:
+- Persona specification: `afi-config/codex/governance/agents/PHOENIX_PERSONA.v0.1.md`
+- Agent universe context: `afi-config/codex/governance/agents/AFI_AGENT_UNIVERSE.v0.1.md`
+
+**Character File**: `src/phoenix.character.ts`
+
+**Key Characteristics**:
+- Warm, technically fluent, and clear communication style
+- Explains AFI's "financial brain" in plain language
+- Acts as a concierge into AFI tools, not the tool itself
+- Respects hard boundaries: NO financial advice, NO guarantees, NO raw data exposure
+
+**Interfaces** (current and planned):
+- Discord (primary, when Discord credentials are configured)
+- Web chat (future)
+- CLI (future)
 
 ---
 
