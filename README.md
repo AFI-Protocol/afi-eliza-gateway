@@ -124,6 +124,8 @@ What it does:
 Boundaries:
 - Local demo/debug only; it does NOT send anything to AFI or any external service.
 - Draft-only outbox; no validation, scoring, tokenomics, or vault writes.
+
+See `docs/AFI_SIGNAL_OUTBOX_README.md` for a conceptual view of how these drafts could be forwarded into AFI in the future.
 ```
 
 ---
