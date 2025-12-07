@@ -21,7 +21,12 @@
 
 import { AgentRuntime, elizaLogger } from "@elizaos/core";
 import { phoenixCharacter } from "./phoenix.character.js";
+import { alphaCharacter } from "./alpha.character.js";
+import { pixelRickCharacter } from "./pixelRick.character.js";
+import { froggyCharacter } from "./froggy.character.js";
+import { valDookCharacter } from "./valDook.character.js";
 import { afiTelemetryPlugin } from "../plugins/afi-telemetry/index.js";
+import { afiReactorActionsPlugin } from "../plugins/afi-reactor-actions/index.js";
 import { afiScoutCharacter } from "./afiscout/index.js";
 
 /**
@@ -72,8 +77,19 @@ async function main() {
       "✅ AFI Telemetry Plugin registered (offline mode: mock data only)"
     );
 
-    // Optional: register AFIScout character as an alternate profile
+    // Register AFI Reactor Actions Plugin
+    elizaLogger.info("🔌 Registering AFI Reactor Actions Plugin...");
+    await runtime.registerPlugin(afiReactorActionsPlugin);
+    elizaLogger.info(
+      "✅ AFI Reactor Actions Plugin registered (DEV/DEMO ONLY - no real trading)"
+    );
+
+    // Optional: register additional characters as alternate profiles
     elizaLogger.info(`🔌 AFIScout character available: ${afiScoutCharacter.name}`);
+    elizaLogger.info(`🔌 Alpha character available: ${alphaCharacter.name}`);
+    elizaLogger.info(`🔌 Pixel Rick character available: ${pixelRickCharacter.name}`);
+    elizaLogger.info(`🔌 Froggy character available: ${froggyCharacter.name}`);
+    elizaLogger.info(`🔌 Val Dook character available: ${valDookCharacter.name}`);
 
     // TODO: Register additional plugins when available:
     // - @elizaos/plugin-node (Node.js services: browser, PDF, speech, etc.)
