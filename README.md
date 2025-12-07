@@ -111,6 +111,61 @@ npm test
 
 ---
 
+## Prize Pipeline Demo — "Pipeline with Friends"
+
+**Status**: Ready for ElizaOS team demo
+**Purpose**: Demonstrate AFI's signal processing pipeline using Phoenix, Alpha, and Val Dook personas
+
+See **[PRIZE_DEMO.md](./PRIZE_DEMO.md)** for the full demo script.
+
+### Quick Start
+
+1. **Start AFI Reactor** (backend):
+   ```bash
+   cd /Users/secretservice/AFI_Modular_Repos/afi-reactor
+   npm run dev
+   # Should start on http://localhost:8080
+   ```
+
+2. **Start AFI Eliza Gateway** (agent runtime):
+   ```bash
+   cd /Users/secretservice/AFI_Modular_Repos/afi-eliza-gateway
+   npm run dev
+   # Starts ElizaOS runtime with Phoenix, Alpha, and Val Dook characters
+   ```
+
+3. **Run the demo** (via Phoenix):
+   - **User**: "Phoenix, run the prize demo"
+   - **Phoenix**: [calls `RUN_PRIZE_DEMO` action and presents narrative summary]
+
+The demo runs a pre-configured BTC trend-pullback signal through the 6-stage Froggy pipeline and shows how Phoenix (narrator), Alpha (scout), and Val Dook (validator) work together.
+
+**DEMO-ONLY**: No real trading, no AFI minting, simulated execution only.
+
+---
+
+### AFIScout Smoke Test
+
+AFIScout is an ElizaOS character that turns natural-language trade ideas into AFI-ready **draft** signal payloads (no PoI/PoInsight/UWR/Novelty/emissions/tokenomics). The smoke script runs locally with an in-memory runtime (no DB, no backends) and logs a single draft JSON.
+
+```bash
+npm run afiscout:smoke
+```
+
+What it does:
+- Creates a minimal AgentRuntime with AFIScout only.
+- Feeds a sample trade idea to AFIScout.
+- Invokes the `emitAfiSignalDraft` action once and logs the resulting `AfiScoutSignalDraft` to stdout.
+
+Boundaries:
+- Local demo/debug only; it does NOT send anything to AFI or any external service.
+- Draft-only outbox; no validation, scoring, tokenomics, or vault writes.
+
+See `docs/AFI_SIGNAL_OUTBOX_README.md` for a conceptual view of how these drafts could be forwarded into AFI in the future.
+```
+
+---
+
 ## Safety Disclaimers
 
 **IMPORTANT**: Phoenix is an educational and informational agent. It does NOT:
@@ -187,4 +242,3 @@ All changes must follow the AFI Droid Charter:
 ## License
 
 MIT
-
