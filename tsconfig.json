@@ -13,8 +13,7 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "outDir": "./dist",
-    "types": ["node"]
+    "outDir": "./dist"
   },
   "include": ["src/**/*.ts", "plugins/**/*.ts"],
   "exclude": ["node_modules", "dist", "scripts", "tests"]
