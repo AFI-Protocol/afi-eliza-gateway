@@ -28,18 +28,18 @@
   "author": "AFI Protocol",
   "license": "MIT",
   "devDependencies": {
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.0.0",
     "tsx": "^4.7.0",
-    "typescript": "^5.9.2",
     "vitest": "^1.0.0"
   },
   "dependencies": {
     "@elizaos/core": "1.6.4",
     "@elizaos/plugin-bootstrap": "1.6.4",
     "@elizaos/plugin-node": "1.0.0-alpha.25",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.0.0",
     "express": "^4.18.2",
-    "mongodb": "^6.21.0"
+    "mongodb": "^6.21.0",
+    "typescript": "^5.9.2"
   },
   "overrides": {
     "@elizaos/plugin-node": {
